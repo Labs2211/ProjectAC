@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Service AC Panggilan Profesional & Bergaransi</title>
+    
+    <!-- Tailwind CSS untuk Desain Modern & Responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons untuk Icon Grafis -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        /* Animasi Tombol WhatsApp Melayang */
+        .pulse-wa {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- CONFIGURATION SCRIPT (Mudah diubah oleh pemilik bengkel) -->
+    <script>
+        // Ganti dengan nomor WhatsApp tujuan (Gunakan kode negara 62 di depan, tanpa spasi/tanda +)
+        const waNumber = "6281234567890"; 
+        
+        // Pesan otomatis untuk tombol Reservasi / Order Jasa
+        const msgOrder = "Halo Admin, saya ingin melakukan reservasi/order untuk Service AC. Mohon info jadwal teknisi yang kosong.";
+        // Pesan otomatis untuk tombol Konsultasi Masalah AC
+        const msgKonsultasi = "Halo Admin, AC saya bermasalah (kurang dingin/bocor/mati total). Saya ingin konsultasi terlebih dahulu sebelum order.";
+
+        // Link Generator
+        const linkOrder = `https://wa.me/${waNumber}?text=${encodeURIComponent(msgOrder)}`;
+        const linkKonsultasi = `https://wa.me/${waNumber}?text=${encodeURIComponent(msgKonsultasi)}`;
+    </script>
+
+    <!-- Navbar / Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Nama Bisnis / Logo Placeholder -->
+            <div class="flex items-center gap-2 text-xl font-bold text-blue-600">
+                <i data-lucide="snowflake" class="text-cyan-500 animate-spin-slow"></i>
+                <span>Sinar Sejuk <span class="text-slate-800">AC</span></span>
+            </div>
+            <!-- Kontak Cepat Desktop -->
+            <a href="javascript:window.open(linkOrder, '_blank')" class="hidden md:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-semibold transition shadow-md shadow-blue-200">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                Panggil Teknisi
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1600" alt="Teknisi AC Sedang Bekerja" class="w-full h-full object-cover opacity-30 object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-white text-center md:text-left">
+                <span class="bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase mb-4 inline-block">
+                    Jasa Service AC Panggilan Bergaransi
+                </span>
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">
+                    AC Rumah Kurang Dingin, Bocor, atau Berisik?
+                </h1>
+                <p class="text-base md:text-lg text-slate-300 mb-8 max-w-xl">
+                    Jangan biarkan ruangan Anda panas! Teknisi ahli kami siap datang langsung ke lokasi Anda untuk mengembalikan kesejukan ruangan dengan cepat, jujur, dan profesional.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="javascript:window.open(linkOrder, '_blank')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-center transition shadow-lg shadow-blue-900/40 flex items-center justify-center gap-2 text-base">
+                        <i data-lucide="calendar-check" class="w-5 h-5"></i> Pesan Layanan Sekarang
+                    </a>
+                    <a href="#layanan" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-8 py-4 rounded-xl font-semibold text-center transition flex items-center justify-center gap-2 text-base">
+                        Lihat Daftar Harga
+                    </a>
+                </div>
+            </div>
+            <!-- Badges Kredibilitas -->
+            <div class="hidden md:grid grid-cols-2 gap-4">
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-white">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-cyan-400 mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Garansi 30 Hari</h3>
+                    <p class="text-sm text-slate-300">Jaminan pekerjaan ulang jika ada masalah setelah perbaikan.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-white">
+                    <i data-lucide="user-check" class="w-10 h-10 text-cyan-400 mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Teknisi Sertifikasi</h3>
+                    <p class="text-sm text-slate-300">Dikerjakan oleh tim ahli yang berpengalaman di bidang HVAC.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-white">
+                    <i data-lucide="clock" class="w-10 h-10 text-cyan-400 mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Respon Cepat</h3>
+                    <p class="text-sm text-slate-300">Teknisi langsung meluncur ke lokasi sesuai jadwal reservasi.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-white">
+                    <i data-lucide="coins" class="w-10 h-10 text-cyan-400 mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-1">Harga Transparan</h3>
+                    <p class="text-sm text-slate-300">Biaya jujur di awal sesuai daftar harga tanpa biaya siluman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section (Jam Operasional & Area Layanan) -->
+    <div class="max-w-4xl mx-auto px-4 -mt-8 relative z-10">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 grid grid-cols-1 md:grid-cols-2 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div class="flex items-center gap-4 pb-4 md:pb-0">
+                <div class="bg-blue-50 p-4 rounded-xl text-blue-600">
+                    <i data-lucide="clock-4" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm md:text-base">Jam Operasional Panggilan</h4>
+                    <p class="text-slate-500 text-xs md:text-sm">Setiap Hari: 07:00 - 20:00 WIB (Hari Libur Tetap Buka)</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 md:pt-0 md:pl-6">
+                <div class="bg-blue-50 p-4 rounded-xl text-blue-600">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 text-sm md:text-base">Area Jangkauan Layanan</h4>
+                    <p class="text-slate-500 text-xs md:text-sm">Melayani seluruh wilayah Kota, Kabupaten, dan sekitarnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Layanan & Daftar Harga Section -->
+    <section id="layanan" class="max-w-6xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Daftar Jasa & Estimasi Harga</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                Harga transparan dan kompetitif. Unit AC Anda akan ditangani dengan standar SOP pengerjaan yang bersih dan rapi.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Kategori 1: Perawatan Rutin -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-blue-600 px-6 py-4 text-white flex items-center gap-2">
+                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                    <h3 class="font-bold text-lg">Perawatan & Cuci AC</h3>
+                </div>
+                <div class="p-6 divide-y divide-slate-100">
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm md:text-base">Cuci AC Split (0.5 - 1 PK)</h4>
+                            <p class="text-xs text-slate-400">Pembersihan indoor & outdoor rutin</p>
+                        </div>
+                        <span class="font-bold text-blue-600 text-sm md:text-base">Rp 75.000</span>
+                    </div>
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm md:text-base">Cuci AC Split (1.5 - 2 PK)</h4>
+                            <p class="text-xs text-slate-400">Pembersihan indoor & outdoor rutin</p>
+                        </div>
+                        <span class="font-bold text-blue-600 text-sm md:text-base">Rp 90.000</span>
+                    </div>
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm md:text-base">Cuci Besar / Overhaul</h4>
+                            <p class="text-xs text-slate-400">Turun unit indoor akibat lendir parah</p>
+                        </div>
+                        <span class="font-bold text-blue-600 text-sm md:text-base">Rp 250.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kategori 2: Pengisian Freon -->
+            <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="bg-cyan-600 px-6 py-4 text-white flex items-center gap-2">
+                    <i data-lucide="gauge" class="w-5 h-5"></i>
+                    <h3 class="font-bold text-lg">Isi & Tambah Freon</h3>
+                </div>
+                <div class="p-6 divide-y divide-slate-100">
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm md:text-base">Tambah Freon R32 / R410a</h4>
+                            <p class="text-xs text-slate-400">Menambah tekanan PSI yang berkurang</p>
+                        </div>
+                        <span class="font-bold text-cyan-600 text-sm md:text-base">Mulai Rp 150k</span>
+                    </div>
+                    <div class="py-3 flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-slate-800 text-sm md:text-base">Isi Freon Full dari Kosong</h4>
+                            <p class="text-xs text-slate-400">Setelah perbaikan kebocoran pipa/unit</p>
+                        </div>
+                        <span class="font-bold text-cyan-600 text-sm md:text-base">Mulai Rp 250k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: TAB FOTO PENGALAMAN KERJA (INTERAKTIF PORTFOLIO) -->
+    <section id="portfolio" class="bg-slate-100 py-16 border-t border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Galeri Pengalaman Kerja Lapangan</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm md:text-base">
+                    Bukti nyata pengerjaan teknisi kami di perumahan, ruko, hingga perkantoran klien.
+                </p>
+            </div>
+
+            <!-- Navigasi Tombol Tab Filter -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterGallery('all', this)" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-blue-600 text-white shadow-md shadow-blue-100">
+                    Semua Foto
+                </button>
+                <button onclick="filterGallery('cuci', this)" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-slate-600 hover:bg-slate-200">
+                    Cuci AC
+                </button>
+                <button onclick="filterGallery('bongkar', this)" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-slate-600 hover:bg-slate-200">
+                    Bongkar Pasang
+                </button>
+                <button onclick="filterGallery('perbaikan', this)" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 bg-white text-slate-600 hover:bg-slate-200">
+                    Perbaikan & Las
+                </button>
+            </div>
+
+            <!-- Grid Foto Pengalaman (Editable Data-Category) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Foto 1 - Cuci AC -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="cuci">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=600" alt="Cuci AC" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Cuci AC Routine</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Pembersihan AC Rumah Tinggal</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Perumahan Cluster Green View</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 - Perbaikan -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="perbaikan">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=600" alt="Ganti Modul" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Perbaikan Elektronik</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Perbaikan PCB & Modul Error</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Ruko Sentra Niaga</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 - Bongkar Pasang -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="bongkar">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=600" alt="Pasang AC" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Instalasi Baru</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Pemasangan Unit AC Split 1 PK</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Kamar Kost Eksklusif</p>
+                    </div>
+                </div>
+
+                <!-- Foto 4 - Cuci AC -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="cuci">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1599256872237-5dcc0fbe9668?auto=format&fit=crop&q=80&w=600" alt="Maintenance Outdoor" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Cuci Outdoor</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Maintenance Besar Unit Outdoor</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Gedung Perkantoran Lt. 3</p>
+                    </div>
+                </div>
+
+                <!-- Foto 5 - Perbaikan -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="perbaikan">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600" alt="Las Pipa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Pengelasan Pipa</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Mencari & Menambal Kebocoran Freon</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Rumah Tinggal Margonda</p>
+                    </div>
+                </div>
+
+                <!-- Foto 6 - Bongkar Pasang -->
+                <div class="gallery-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 transition-all duration-500" data-category="bongkar">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&q=80&w=600" alt="Bongkar AC" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Bongkar Unit</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-800 text-base mb-1">Bongkar AC Lama untuk Relokasi</h4>
+                        <p class="text-xs text-slate-500 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Apartemen Central Room</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT UNTUK INTERAKTIF TAB FILTER PORTFOLIO -->
+    <script>
+        function filterGallery(category, buttonElement) {
+            // 1. Ubah Desain Tombol Aktif / Non-aktif
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md', 'shadow-blue-100');
+                btn.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-200');
+            });
+            
+            buttonElement.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-200');
+            buttonElement.classList.add('bg-blue-600', 'text-white', 'shadow-md', 'shadow-blue-100');
+
+            // 2. Filter Logika Sembunyikan / Memunculkan Kartu Foto
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => { item.style.display = 'none'; }, 300);
+                }
+            });
+        }
+    </script>
+
+    <!-- Alur Kerja Jasa Panggilan -->
+    <section class="bg-slate-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-12">3 Langkah Mudah Panggil Teknisi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold mb-2">Hubungi via WA</h3>
+                    <p class="text-sm text-slate-400">Konsultasikan keluhan AC dan kirimkan alamat lengkap Anda.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold mb-2">Teknisi Datang & Cek</h3>
+                    <p class="text-sm text-slate-400">Tim menganalisa masalah di tempat dan memberikan transparansi biaya.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold mb-2">Pengerjaan & Garansi</h3>
+                    <p class="text-sm text-slate-400">AC diperbaiki hari itu juga dengan rapi serta bergaransi resmi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bg-blue-50 border-t border-blue-100 py-16 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl md:text-4xl font-bold text-slate-900 mb-4">Butuh Layanan Cepat atau Mau Tanya Dulu?</h2>
+            <p class="text-slate-600 mb-8 text-sm md:text-base">Tim CS kami online dan responsif melayani konsultasi masalah AC secara GRATIS.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                <a href="javascript:window.open(linkOrder, '_blank')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-md">
+                    <i data-lucide="check-square" class="w-5 h-5"></i> Booking Jadwal Servis
+                </a>
+                <a href="javascript:window.open(linkKonsultasi, '_blank')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-bold transition flex items-center justify-center gap-2 shadow-md">
+                    <i data-lucide="messages-square" class="w-5 h-5"></i> Hubungi CS / Konsultasi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 text-white font-bold text-lg mb-3">
+                <i data-lucide="snowflake" class="text-cyan-500"></i>
+                <span>Sinar Sejuk AC</span>
+            </div>
+            <p class="text-xs">&copy; 2026 Sinar Sejuk AC Panggilan. Semua hak cipta dilindungi undang-undang.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a href="javascript:window.open(linkOrder, '_blank')" class="fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition z-50 pulse-wa flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
